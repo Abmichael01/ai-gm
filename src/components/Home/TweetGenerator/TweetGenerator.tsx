@@ -25,8 +25,7 @@ const TweetGenerator: React.FC = () => {
     if (!idea.trim()) return;
     setLoading(true);
 
-    const prompt = `Write a ${tone} tweet (max 280 characters) about: "${idea}". Make it engaging and make it more human, let it make more sense. Just the tweet, no addition.`;
-
+    const prompt = `Craft a highly engaging, human-like tweet (max 280 characters) in a ${tone} tone about: "${idea}". Make it witty, relatable, and natural—something that resonates and sounds like it could go viral. Output only the tweet.`;
     try {
       const res = await fetch("https://api.cohere.ai/v1/generate", {
         method: "POST",
